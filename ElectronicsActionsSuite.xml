@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Actions Items For Electronics Actions Tests">
+    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <test name="Actions Items For Electronics Actions Tests" preserve-order="true">
+        <classes>
+
+            <class name="ElectronicsActionsTests.AddToCartTest"/>
+            <class name="ElectronicsActionsTests.AddToCompareTest"/>
+            <class name="ElectronicsActionsTests.AddToWishListTest"/>
+            <class name="ElectronicsActionsTests.EmailFriendTest"></class>
+
+        </classes>
+    </test>
+</suite>
