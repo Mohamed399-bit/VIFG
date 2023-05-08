@@ -1,10 +1,10 @@
 /*
- * Copyright (c) INTELLISC 2020.
+ * Copyright (c) NCGR 2023.
  * All Rights Reserved.
  *
  * ver          Developer          Date        Comments
  * ----- ---------------------  ----------  ----------------------------------------
- * 1.00  Eng. Mohamed Abden 23/06/2020 - Script created.
+ * 1.00  Eng. Mohamed Abden 08/05/2023 - Script created.
  */
 package tests;
 

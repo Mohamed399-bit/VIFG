@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 08/05/2023 - Script created.
+ */
+
 package pages;
 
 import org.openqa.selenium.By;

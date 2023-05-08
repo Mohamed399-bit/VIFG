@@ -9,8 +9,5 @@
         <module name="Nopcommerce" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Nopcommerce" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
