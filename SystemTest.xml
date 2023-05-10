@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="System Test For all Happy Pass ">
     <suite-files preserve-order="true">
-        <!--suite-file path="RegisertSuite.xml"/>
-        <suite-file path="ApparelActionsSuite.xml"/>
-        <suite-file path="BooksActionsSuite.xml"/>
-        <suite-file path="DigitalDownloadsActionsSuite.xml"/>
-        <suite-file path="ElectronicsActionsSuite.xml"/>
-        <suite-file path="GiftCardsActionsSuite.xml"/>
-        <suite-file path="JewelryActionsSuite.xml"/>
-        <suite-file path="AboutUsAndContactUsSuite.xml"/>
-        <suite-file path="ShoppingCartSuite.xml"/-->
+        <suite-file path="LoginSuite.xml"/>
     </suite-files>
 </suite>
