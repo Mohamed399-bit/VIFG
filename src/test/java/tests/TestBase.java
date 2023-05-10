@@ -64,10 +64,11 @@ public class TestBase {
             driver = new ChromeDriver(options);
         }
 
+        http://10.14.9.35:4250/
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-        driver.navigate().to("https://10.14.8.61:8055/Account/Login");
-        //driver.navigate().to("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        //driver.navigate().to("https://10.14.8.61:8055/Account/Login");
+        driver.navigate().to("http://10.14.9.35:4250/");
 
         allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()
@@ -77,7 +78,6 @@ public class TestBase {
                         .build(), System.getProperty("user.dir")
                         + "/allure-results/");
     }
-
     @AfterSuite
     public void closeDriver() {
         driver.quit();

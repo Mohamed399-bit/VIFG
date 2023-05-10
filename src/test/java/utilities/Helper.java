@@ -1,10 +1,10 @@
 /*
- * Copyright (c) INTELLISC 2020.
+ * Copyright (c) NCGR 2023.
  * All Rights Reserved.
  *
  * ver          Developer          Date        Comments
  * ----- ---------------------  ----------  ----------------------------------------
- * 1.00  Eng. Mohamed Abden 23/06/2020 - Script created.
+ * 1.00  Eng. Mohamed Abden 08/05/2023 - Script created.
  */
 package utilities;
 
@@ -28,8 +28,8 @@ import java.util.Random;
 public class Helper {
 
     //Method to take screenshot the test case fail
-    public static void captureScreenShot(WebDriver driver, String screenshotname) {
-        Path dest = Paths.get("./Screenshots", screenshotname + ".png");
+    public static void captureScreenShot(WebDriver driver, String screenshotName) {
+        Path dest = Paths.get("./Screenshots", screenshotName + ".png");
         try {
             Files.createDirectories(dest.getParent());
             FileOutputStream out = new FileOutputStream(dest.toString());
@@ -67,7 +67,7 @@ public class Helper {
         return randomString;
     }
 
-    //Method to get Todays date
+    //Method to get Today date
     public static String getSystemDate() {
         // Create object of SimpleDateFormat class and decide the format
         DateFormat dateFormat = new SimpleDateFormat("EEE, dd/MM/yyyy");
