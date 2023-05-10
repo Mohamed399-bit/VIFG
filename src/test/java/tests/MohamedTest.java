@@ -9,6 +9,7 @@
 
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -20,7 +21,11 @@ public class MohamedTest extends TestBase{
     LoginPage loginObject;
     HomePage homeObject;
 
-    @Test
+    @Test(priority = 1)
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Login To Web")
+    @Feature("Login Epic")
+    @Epic("Login Epic")
     public void testMohamed() throws InterruptedException {
 
         lunchObject = new LunchPage(driver);
