@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 10/05/2023 - Script created.
+ */
 package utilities;
 
 import java.sql.Connection;

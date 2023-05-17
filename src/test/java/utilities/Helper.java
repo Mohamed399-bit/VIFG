@@ -56,7 +56,7 @@ public class Helper {
 
     //Method to generate random Number.
     public static String generateRandomNumber(int length) {
-        char[] chars = "0123456789".toCharArray();
+        char[] chars = "123456789".toCharArray();
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < length; i++) {
@@ -96,10 +96,6 @@ public class Helper {
         Date date = new Date();
         // Now format the date
         String date1 = dateFormat.format(date);
-        /*int date2 = Integer.parseInt(date1);
-        int date3 = date2 + 4 ;
-        String date4 = String.valueOf(date3);*/
-        // Print the Date
         System.out.println(date1);
         return date1;
     }
