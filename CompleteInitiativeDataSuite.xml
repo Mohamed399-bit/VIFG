@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Complete Initiative Data Tests">
+    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <test name="Complete Initiative Data" preserve-order="true">
+        <classes>
+            <class name="InitiativesCompleteDataFeatures.LoginTest"/>
+            <class name="InitiativesCompleteDataFeatures.OpenInitiativeTest"/>
+            <class name="InitiativesCompleteDataFeatures.CompletedInitiativeDataTest"/>
+        </classes>
+    </test>
+</suite>

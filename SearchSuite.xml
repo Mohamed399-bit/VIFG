@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Search Suite">
+    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <test name="Search by all fileds" preserve-order="true">
+        <classes>
+            <class name="SearchFeatures.LoginTest"/>
+            <class name="SearchFeatures.SearchByUICTest"/>
+            <class name="SearchFeatures.SearchByDurationTest"/>
+            <class name="SearchFeatures.SearchByInitiativeIDTest"/>
+            <class name="SearchFeatures.SearchByProgramNameTest"/>
+        </classes>
+    </test>
+</suite>
