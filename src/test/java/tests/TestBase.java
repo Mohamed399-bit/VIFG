@@ -64,17 +64,15 @@ public class TestBase {
             driver = new ChromeDriver(options);
         }
 
-        http://10.14.9.35:4250/
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-        //driver.navigate().to("https://10.14.8.61:8055/Account/Login");
         driver.navigate().to("http://10.14.9.35:4250/");
 
         allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()
                         .put("Browser", "Chrome")
                         .put("Browser.Version", "106.0.5249.91")
-                        .put("URL", "https://10.14.8.61:8055/Account/Login")
+                        .put("URL", "http://10.14.9.35:4250/")
                         .build(), System.getProperty("user.dir")
                         + "/allure-results/");
     }

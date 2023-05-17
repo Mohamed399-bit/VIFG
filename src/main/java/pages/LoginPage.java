@@ -15,7 +15,6 @@ public class LoginPage extends PageBase {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
     By userNameTxt = By.id("Username");
     By passwordTxt = By.id("Password");
     By loginBtn = By.cssSelector("button.btn.btn-secondary-orange.btn-lg.text-white");

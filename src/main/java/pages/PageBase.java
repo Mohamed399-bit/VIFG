@@ -13,7 +13,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -41,10 +41,6 @@ public class PageBase {
         ele2.selectByIndex(index);
     }
 
-//    protected static void clickButton2(WebElement button) {
-//        button.click();
-//    }
-
     protected static void clickButton(By button) {
         driver.findElement(button).click();
     }
@@ -57,14 +53,16 @@ public class PageBase {
         return driver.findElement(ele);
     }
 
-//    protected static void setTextWebElement2(WebElement textElement, String value) {
-//        textElement.sendKeys(value);
-//
-//    }
-
     protected static void setTextWebElement(By textElement, String value) {
         driver.findElement(textElement).sendKeys(value);
+    }
 
+    protected static void clearTextWbElement(By textElement){
+        driver.findElement(textElement).clear();
+    }
+
+    public void setTextWebElementByJS(By textElement ,String value){
+        jse.executeScript("arguments[0].setAttribute('value','"+value+"')", textElement);
     }
 
     protected static void clearField(By button) {
@@ -79,6 +77,21 @@ public class PageBase {
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,500)");
     }
+    protected void scrollToBottom2() {
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        jse.executeScript("scrollBy(0,200)");
+    }
+
+    protected void scrollUntilElement1(By element) throws InterruptedException {
+        jse.executeScript("arguments[0].scrollIntoView(true);", getElement(element));
+        Thread.sleep(1000);
+    }
+
+    protected void scrollUntilElement2(By element) {
+        actions.moveToElement(getElement(element));
+        actions.build();
+        actions.perform();
+    }
 
     public void clickOnButtonUsingJavaScript(WebElement ele) {
         jse.executeScript("arguments[0].click();", ele);
@@ -86,6 +99,17 @@ public class PageBase {
 
     public void click(WebElement ele) {
         jse.executeScript("arguments[0].click();", ele);
+    }
+
+    public void clickOnButtonUsingAction(WebElement ele){
+        actions.moveToElement(ele).
+                click().
+                perform();
+    }
+
+    public void waitUntilLoaderDisappear(){
+        wait.until(ExpectedConditions.invisibilityOfAllElements(
+                driver.findElement(By.xpath("//section[@class='loading-container']"))));
     }
 
 
