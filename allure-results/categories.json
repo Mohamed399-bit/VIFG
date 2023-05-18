@@ -2,29 +2,22 @@
   {
     "name": "Ignored tests",
     "messageRegex": ".*ignored.*",
-    "matchedStatuses": [
-      "skipped"
-    ]   
+    "matchedStatuses": ["skipped"],
+    "flaky": true
   },
   {
     "name": "Infrastructure problems",
-    "messageRegex": ".*RuntimeException.*",
-    "matchedStatuses": [
-      "broken"
-    ]
+    "traceRegex": ".*RuntimeException.*",
+    "matchedStatuses": ["broken", "failed"]
   },
   {
     "name": "Outdated tests",
     "messageRegex": ".*FileNotFound.*",
-    "matchedStatuses": [
-      "broken"
-    ]
+    "matchedStatuses": ["broken"]
   },
   {
-    "name": "Regression",
-    "messageRegex": ".*\\sException:.*",
-    "matchedStatuses": [
-      "broken"
-    ]
+    "name": "Passed",
+    "messageRegex": ".*",
+    "matchedStatuses": ["passed"]
   }
 ]
