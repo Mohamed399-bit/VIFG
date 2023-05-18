@@ -6,35 +6,38 @@ import pages.*;
 import tests.TestBase;
 import utilities.SetURL;
 
-public class SearchByProgramNameTest extends TestBase {
+public class SearchByEntityTest extends TestBase {
 
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
-    VRPProgramListPage vrpProgramListObject;
+    OwnerEntitySearchPage ownerEntitySearchObject;
 
-    @Test(priority = 5)
+    @Test(priority = 6)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By Program Name")
+    @Description("Search By Entity Name")
     @Feature("Search")
     @Epic("Search")
-    public void searchByProgramName() throws InterruptedException {
+    public void SearchByEntity() throws InterruptedException {
 
         existInitiativesObject = new ExistInitiativesPage(driver);
         existInitiativesObject.getDataForFirstInitiative();
 
         homeObject = new HomePage(driver);
         homeObject.clickOnSearchIcon();
+        homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
-        searchObject.clickOnVRPProgramList();
+        searchObject.clickOnGovAgencyCodeList();
 
-        vrpProgramListObject = new VRPProgramListPage(driver);
-        vrpProgramListObject.selectProgramName(existInitiativesObject.programNameTxt);
+        ownerEntitySearchObject = new OwnerEntitySearchPage(driver);
+        ownerEntitySearchObject.selectEntityName(existInitiativesObject.govOwnerTxt);
         searchObject.clickOnSearchButton();
 
-        existInitiativesObject.VerifyThatSearchByProgramNameIsTrue(existInitiativesObject.programNameTxt);
+        existInitiativesObject.VerifyThatSearchByEntityNameIsTrue(existInitiativesObject.govOwnerTxt);
+        searchObject.clickOnClearButton();
         SetURL.refreshPage();
+
 
         Thread.sleep(3000);
     }

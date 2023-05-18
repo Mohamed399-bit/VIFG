@@ -19,7 +19,7 @@ public class OwnerEntityPage extends PageBase{
         super(driver);
     }
 
-    By ownerEntityList = By.id("ncgr_id_4_list");
+    By ownerEntityList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-10 ng-star-inserted']");
     List<WebElement> ownerEntityItem = getElement(ownerEntityList).findElements(By.tagName("li"));
     public void SelectEntity() throws InterruptedException {
         Thread.sleep(3000);

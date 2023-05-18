@@ -25,7 +25,7 @@ public class SearchByUICTest extends TestBase {
         searchObject.searchByUIC(existInitiativesObject.UICNumber);
 
         existInitiativesObject.VerifyThatSearchByUICIsTrue(existInitiativesObject.UICNumber);
-        searchObject.clearUICFiled();
+        //searchObject.clearUICFiled();
         SetURL.refreshPage();
 
         Thread.sleep(3000);

@@ -120,6 +120,19 @@ public class ExistInitiativesPage extends PageBase {
         }
     }
 
+    public void VerifyThatSearchByEntityNameIsTrue(String programName) {
+        waitUntilLoaderDisappear();
+        WebElement tableBody = getElement(table).findElement(By.tagName("tbody"));
+        List<WebElement> trs = tableBody.findElements(By.tagName("tr"));
+        for (WebElement ele : trs) {
+            List<WebElement> tds = ele.findElements(By.tagName("td"));
+            WebElement govOwner = tds.get(3);
+            Assert.assertEquals(govOwner.getText(), programName);
+            System.out.println("Entity Name is : " + govOwner.getText());
+            break;
+        }
+    }
+
     public void VerifyThatSearchByDurationIsTrue(String durationTxt) {
         waitUntilLoaderDisappear();
         WebElement tableBody = getElement(table).findElement(By.tagName("tbody"));

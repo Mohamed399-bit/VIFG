@@ -3,17 +3,17 @@ package tests;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class SearchByUICTest extends TestBase{
+public class SearchByEntityTest extends TestBase{
 
     LunchPage lunchObject;
     LoginPage loginObject;
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
-    VRPProgramListPage vrpProgramListObject;
+    OwnerEntitySearchPage ownerEntitySearchObject;
 
-    @Test(priority = 2)
-    public void searchByUIC() throws InterruptedException {
+    @Test(priority = 1)
+    public void SearchByEntity() throws InterruptedException {
         lunchObject = new LunchPage(driver);
         lunchObject.clickOnGovernmentEntity();
 
@@ -24,13 +24,22 @@ public class SearchByUICTest extends TestBase{
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
 
         existInitiativesObject = new ExistInitiativesPage(driver);
-        existInitiativesObject.clickOnUnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
-        searchObject = new SearchPage(driver);
-        searchObject.searchByUIC(existInitiativesObject.UICNumber);
+        homeObject.clickOnSearchIcon();
+        homeObject.scrollDown();
 
-        existInitiativesObject.VerifyThatSearchByUICIsTrue(existInitiativesObject.UICNumber);
+        searchObject = new SearchPage(driver);
+        searchObject.clickOnGovAgencyCodeList();
+
+        ownerEntitySearchObject = new OwnerEntitySearchPage(driver);
+        ownerEntitySearchObject.selectEntityName(existInitiativesObject.govOwnerTxt);
+        searchObject.clickOnSearchButton();
+
+        existInitiativesObject.VerifyThatSearchByEntityNameIsTrue(existInitiativesObject.govOwnerTxt);
+        Thread.sleep(2000);
+        searchObject.clickOnClearButton();
+
 
         Thread.sleep(8000);
     }

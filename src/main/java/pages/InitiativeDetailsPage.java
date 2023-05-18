@@ -51,6 +51,7 @@ public class InitiativeDetailsPage extends PageBase{
         WebElement arrow = getElement(ownerEntityFiled).findElement(
                 By.xpath("//div[@aria-label='dropdown trigger']"));
         clickOnButtonUsingJavaScript(arrow);
+        Thread.sleep(2500);
 
     }
     public void clickOnInitiativeClassification(){
