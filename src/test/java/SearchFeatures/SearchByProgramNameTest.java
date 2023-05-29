@@ -21,6 +21,7 @@ public class SearchByProgramNameTest extends TestBase {
     public void searchByProgramName() throws InterruptedException {
 
         existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
         homeObject = new HomePage(driver);
@@ -34,6 +35,7 @@ public class SearchByProgramNameTest extends TestBase {
         searchObject.clickOnSearchButton();
 
         existInitiativesObject.VerifyThatSearchByProgramNameIsTrue(existInitiativesObject.programNameTxt);
+        //searchObject.clickOnClearButton();
         SetURL.refreshPage();
 
         Thread.sleep(3000);

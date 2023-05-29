@@ -17,6 +17,7 @@ public class VRPProgramListPage extends PageBase{
 
     public void selectProgramName(String program){
 
+        System.out.println("Search for Program Name : " + program);
         for (WebElement ele : items){
             if (ele.getText().equals(program)){
                 clickOnButtonUsingJavaScript(ele);

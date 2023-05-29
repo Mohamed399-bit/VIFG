@@ -24,7 +24,7 @@ public class LoginTest extends TestBase {
         lunchObject.clickOnGovernmentEntity();
 
         loginObject = new LoginPage(driver);
-        loginObject.loginMethod("1856103492","Test@12345");
+        loginObject.loginMethod("1856103492","Test@123456");
 
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");

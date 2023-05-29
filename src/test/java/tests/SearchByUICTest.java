@@ -18,13 +18,13 @@ public class SearchByUICTest extends TestBase{
         lunchObject.clickOnGovernmentEntity();
 
         loginObject = new LoginPage(driver);
-        loginObject.loginMethod("1856103492", "Test@12345");
+        loginObject.loginMethod("1856103492", "Test@123456");
 
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
 
         existInitiativesObject = new ExistInitiativesPage(driver);
-        existInitiativesObject.clickOnUnCompletedInitiatives();
+        //existInitiativesObject.clickOnUnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
         searchObject = new SearchPage(driver);
@@ -32,6 +32,6 @@ public class SearchByUICTest extends TestBase{
 
         existInitiativesObject.VerifyThatSearchByUICIsTrue(existInitiativesObject.UICNumber);
 
-        Thread.sleep(8000);
+        Thread.sleep(4000);
     }
 }

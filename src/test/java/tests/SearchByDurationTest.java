@@ -10,7 +10,6 @@ public class SearchByDurationTest extends TestBase{
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
-    VRPProgramListPage vrpProgramListObject;
 
     @Test(priority = 2)
     public void searchByProgramName() throws InterruptedException {
@@ -18,12 +17,13 @@ public class SearchByDurationTest extends TestBase{
         lunchObject.clickOnGovernmentEntity();
 
         loginObject = new LoginPage(driver);
-        loginObject.loginMethod("1856103492", "Test@12345");
+        loginObject.loginMethod("1856103492", "Test@123456");
 
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
 
         existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
         homeObject.clickOnSearchIcon();
@@ -34,7 +34,10 @@ public class SearchByDurationTest extends TestBase{
         searchObject.clickOnSearchButton();
 
         existInitiativesObject.VerifyThatSearchByDurationIsTrue(existInitiativesObject.durationTxt);
+        Thread.sleep(2000);
 
-        Thread.sleep(8000);
+        searchObject.clickOnClearButton();
+
+        Thread.sleep(5000);
     }
 }

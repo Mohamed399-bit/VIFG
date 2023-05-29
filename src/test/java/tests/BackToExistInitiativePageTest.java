@@ -48,7 +48,7 @@ public class BackToExistInitiativePageTest extends TestBase{
 
         calenderObject = new CalenderPage(driver);
         calenderObject.selectMonthByIndex(5);
-        calenderObject.selectYearByIndex(4);
+        calenderObject.selectYearByIndex("2022");
         calenderObject.selectDay("15");
 
         initiativeDetailsObject.enterInitiativeDurationPerMonth(Helper.generateRandomNumber(1));

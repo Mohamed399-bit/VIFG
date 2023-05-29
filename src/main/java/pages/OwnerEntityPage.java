@@ -22,7 +22,7 @@ public class OwnerEntityPage extends PageBase{
     By ownerEntityList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-10 ng-star-inserted']");
     List<WebElement> ownerEntityItem = getElement(ownerEntityList).findElements(By.tagName("li"));
     public void SelectEntity() throws InterruptedException {
-        Thread.sleep(3000);
-        ownerEntityItem.get(5).click();
+        Thread.sleep(1500);
+        ownerEntityItem.get(3).click();
     }
 }

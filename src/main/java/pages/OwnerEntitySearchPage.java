@@ -26,6 +26,7 @@ public class OwnerEntitySearchPage extends PageBase{
 
     public void selectEntityName(String entity){
 
+        System.out.println("Search for entity Name : " + entity);
         for (WebElement ele : items){
             if (ele.getText().equals(entity)){
                 clickOnButtonUsingJavaScript(ele);

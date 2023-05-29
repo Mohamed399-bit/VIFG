@@ -38,7 +38,7 @@ public class MohamedTest extends TestBase{
         lunchObject.clickOnGovernmentEntity();
 
         loginObject = new LoginPage(driver);
-        loginObject.loginMethod("1856103492","Test@12345");
+        loginObject.loginMethod("1856103492","Test@123456");
 
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
@@ -72,15 +72,16 @@ public class MohamedTest extends TestBase{
         initiativeDetailsObject.enterApprovedCosts(Helper.generateRandomNumber(5)+"000");
         initiativeDetailsObject.clickOnEditIcon();
 
+        Thread.sleep(6000);
         initiativeAchievedSavingsObject = new InitiativeAchievedSavingsPage(driver);
         initiativeAchievedSavingsObject.enterInitiativeAchievedSavings(Helper.generateRandomNumber(3)+"000");
 
-        initiativeDetailsObject.enterInitiativeDescription(Helper.generateRandomName(10000));
+        initiativeDetailsObject.enterInitiativeDescription(Helper.generateRandomName(4000));
         initiativeDetailsObject.clickOnCalenderIcon();
 
         calenderObject = new CalenderPage(driver);
         calenderObject.selectMonthByIndex(5);
-        calenderObject.selectYearByIndex(4);
+        calenderObject.selectYearByIndex("2022");
         calenderObject.selectDay("15");
 
         initiativeDetailsObject.enterInitiativeDurationPerMonth(Helper.generateRandomNumber(1));

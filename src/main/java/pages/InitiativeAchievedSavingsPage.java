@@ -25,10 +25,13 @@ public class InitiativeAchievedSavingsPage extends PageBase{
     By initiativeAchievedSavingsTxt = By.id("initiativeAchievedSavings");
 
     public void enterInitiativeAchievedSavings(String value) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(initiativeAchievedSavingsTxt));
         WebElement inputText = getElement(initiativeAchievedSavingsTxt).findElement(By.tagName("input"));
-        clickOnButtonUsingJavaScript(inputText);
+        //clickOnButtonUsingJavaScript(inputText);
+        inputText.clear();
+        Thread.sleep(1000);
         inputText.sendKeys(value);
+
     }
 }

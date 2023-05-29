@@ -20,6 +20,7 @@ public class SearchByDurationTest extends TestBase {
     public void searchByDuration() throws InterruptedException {
 
         existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
         homeObject = new HomePage(driver);
@@ -27,12 +28,11 @@ public class SearchByDurationTest extends TestBase {
         homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
-        searchObject.clickOnClearButton();
+        //searchObject.clickOnClearButton();
         searchObject.searchByDuration(existInitiativesObject.durationTxt);
         searchObject.clickOnSearchButton();
 
         existInitiativesObject.VerifyThatSearchByDurationIsTrue(existInitiativesObject.durationTxt);
-        Thread.sleep(2000);
         //searchObject.clickOnClearButton();
         SetURL.refreshPage();
 

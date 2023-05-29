@@ -24,9 +24,6 @@ public class PageBase {
     public static WebDriver driver;
 
     //Super constructor
-   /* public PageBase(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }*/
     public PageBase(WebDriver driver) {
         this.driver = driver;
     }
@@ -75,11 +72,16 @@ public class PageBase {
 
     protected void scrollToBottom() {
         //JavascriptExecutor js = (JavascriptExecutor) driver;
-        jse.executeScript("scrollBy(0,500)");
+        jse.executeScript("scrollBy(0,600)");
+    }
+
+    protected void scrollToUp() {
+        //JavascriptExecutor js = (JavascriptExecutor) driver;
+        jse.executeScript("scrollBy(0,-650)");
     }
     protected void scrollToBottom2() {
         //JavascriptExecutor js = (JavascriptExecutor) driver;
-        jse.executeScript("scrollBy(0,200)");
+        jse.executeScript("scrollBy(0,250)");
     }
 
     protected void scrollUntilElement1(By element) throws InterruptedException {
@@ -110,6 +112,11 @@ public class PageBase {
     public void waitUntilLoaderDisappear(){
         wait.until(ExpectedConditions.invisibilityOfAllElements(
                 driver.findElement(By.xpath("//section[@class='loading-container']"))));
+    }
+
+    public void waitUntilLoaderOfTableDisappear(){
+        wait.until(ExpectedConditions.invisibilityOfAllElements(
+                driver.findElement(By.xpath("//i[@class='ncgr-table__loading-icon ncgri ncgri-spin ncgri-spinner']"))));
     }
 
 

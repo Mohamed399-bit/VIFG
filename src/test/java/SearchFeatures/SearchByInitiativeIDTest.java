@@ -20,19 +20,20 @@ public class SearchByInitiativeIDTest extends TestBase {
 
 
         existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnCompletedInitiatives();
         existInitiativesObject.getDataForFirstInitiative();
 
         homeObject = new HomePage(driver);
         homeObject.clickOnSearchIcon();
-        homeObject.scrollDown();
+        //homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
         searchObject.searchByInitiativeId(existInitiativesObject.initiativeIdTxt);
-        searchObject.clickOnSearchButton();
+        searchObject.clickOnSearchButton2();
 
         existInitiativesObject.VerifyThatSearchByInitiativeIdIsTrue(existInitiativesObject.initiativeIdTxt);
         SetURL.refreshPage();
 
-        Thread.sleep(3000);
+        Thread.sleep(5000);
     }
 }

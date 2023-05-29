@@ -6,6 +6,7 @@ import pages.*;
 import tests.SavePopupPage;
 import tests.TestBase;
 import utilities.Helper;
+import utilities.SetURL;
 
 public class CompletedInitiativeDataTest extends TestBase {
 
@@ -16,6 +17,7 @@ public class CompletedInitiativeDataTest extends TestBase {
     OwnerEntityPage ownerEntityObject;
     CalenderPage calenderObject;
     SavePopupPage savePopupObject;
+    ExistInitiativesPage existInitiativesObject;
     @Test(priority = 3)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Complete Data For Uncompleted Initiative")
@@ -24,7 +26,7 @@ public class CompletedInitiativeDataTest extends TestBase {
     public void CompleteDataForUncompletedInitiative() throws InterruptedException {
 
         initiativeDetailsObject = new InitiativeDetailsPage(driver);
-        initiativeDetailsObject.enterStrategicObjective(Helper.generateRandomName(300));
+        initiativeDetailsObject.enterStrategicObjective(Helper.generateRandomWords2(50));
         initiativeDetailsObject.clickOnOwnerList();
 
         ownerEntityObject = new OwnerEntityPage(driver);
@@ -46,12 +48,12 @@ public class CompletedInitiativeDataTest extends TestBase {
         initiativeAchievedSavingsObject = new InitiativeAchievedSavingsPage(driver);
         initiativeAchievedSavingsObject.enterInitiativeAchievedSavings(Helper.generateRandomNumber(3)+"000");
 
-        initiativeDetailsObject.enterInitiativeDescription(Helper.generateRandomName(10000));
+        initiativeDetailsObject.enterInitiativeDescription(Helper.generateRandomWords2(400));
         initiativeDetailsObject.clickOnCalenderIcon();
 
         calenderObject = new CalenderPage(driver);
         calenderObject.selectMonthByIndex(5);
-        calenderObject.selectYearByIndex(4);
+        calenderObject.selectYearByIndex("2022");
         calenderObject.selectDay("15");
 
         initiativeDetailsObject.enterInitiativeDurationPerMonth(Helper.generateRandomNumber(1));
@@ -59,8 +61,13 @@ public class CompletedInitiativeDataTest extends TestBase {
 
         savePopupObject = new SavePopupPage(driver);
         savePopupObject.clickOnSaveButton();
-
-        Thread.sleep(8000);
+        Thread.sleep(4000);
+        SetURL.refreshPage();
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.scrollUp();
+        existInitiativesObject.clickOnCompletedInitiatives();
+        existInitiativesObject.VerifyThatInitiativeDataCompletedIsAddToCompletedTab(OpenInitiativeTest.UICNumber);
+        Thread.sleep(2000);
 
     }
 }
