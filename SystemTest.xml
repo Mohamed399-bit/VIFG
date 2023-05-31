@@ -3,5 +3,7 @@
     <suite-files preserve-order="true">
         <suite-file path="SearchSuite.xml"/>
         <suite-file path="CompleteInitiativeDataSuite.xml"/>
+        <suite-file path="BackToExistInitiativeListSuite.xml"/>
+        <suite-file path="CancelCompleteInitiativeDataSuite.xml"/>
     </suite-files>
 </suite>

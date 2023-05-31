@@ -55,6 +55,11 @@ public class ExistInitiativesPage extends PageBase {
         Thread.sleep(1000);
     }
 
+    public void scrollDown() throws InterruptedException {
+        scrollToBottom2();
+        Thread.sleep(1000);
+    }
+
     public void clickOnViewInitiativeNumber(String number) {
         WebElement tableBody = getElement(table).findElement(By.tagName("tbody"));
         List<WebElement> trs = tableBody.findElements(By.tagName("tr"));

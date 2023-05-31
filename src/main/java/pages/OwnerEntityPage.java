@@ -9,6 +9,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -17,12 +18,15 @@ import java.util.List;
 public class OwnerEntityPage extends PageBase{
     public OwnerEntityPage(WebDriver driver) {
         super(driver);
+        jse = (JavascriptExecutor) driver;
     }
 
     By ownerEntityList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-10 ng-star-inserted']");
     List<WebElement> ownerEntityItem = getElement(ownerEntityList).findElements(By.tagName("li"));
-    public void SelectEntity() throws InterruptedException {
+    public void SelectEntity(int index) throws InterruptedException {
         Thread.sleep(1500);
-        ownerEntityItem.get(3).click();
+        scrollToBottom2();
+        System.out.println("Size : " + ownerEntityItem.size());
+        ownerEntityItem.get(index).click();
     }
 }
