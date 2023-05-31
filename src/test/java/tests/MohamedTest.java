@@ -57,7 +57,7 @@ public class MohamedTest extends TestBase{
         initiativeDetailsObject.clickOnOwnerList();
 
         ownerEntityObject = new OwnerEntityPage(driver);
-        ownerEntityObject.SelectEntity();
+        ownerEntityObject.SelectEntity(2);
 
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 

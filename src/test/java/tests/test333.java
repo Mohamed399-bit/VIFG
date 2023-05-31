@@ -21,7 +21,7 @@ public class test333{
     @Test()
     public void clickdsdsd() throws InterruptedException {
 
-        int randomNum = ThreadLocalRandom.current().nextInt(0, 4 + 1);
+        int randomNum = ThreadLocalRandom.current().nextInt(2019, 2020 + 1);
         System.out.println(randomNum);
 
     }

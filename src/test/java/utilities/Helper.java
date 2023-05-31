@@ -24,6 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Helper {
 
@@ -156,6 +157,12 @@ public class Helper {
         String day = new SimpleDateFormat("EE", Locale.ENGLISH).format(date.getTime());
         System.out.println(new SimpleDateFormat("EE", Locale.ENGLISH).format(date.getTime()));
         return day;
+    }
+
+    public static int generateRandomNumber2(int min , int max){
+
+        int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+        return randomNum;
     }
 
 }

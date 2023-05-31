@@ -24,6 +24,7 @@ public class OpenInitiativeTest extends TestBase {
         Thread.sleep(2000);
         existInitiativesObject.getDataForFirstInitiative();
         UICNumber = existInitiativesObject.UICNumber;
+        existInitiativesObject.scrollDown();
         existInitiativesObject.clickOnEditInitiativeNumber(existInitiativesObject.UICNumber);
         System.out.println("Initiative Name : " + existInitiativesObject.initiativeNameTxt);
 
