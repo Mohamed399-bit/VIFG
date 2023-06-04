@@ -24,7 +24,7 @@ public class InitiativeClassificationPage extends PageBase{
     By initiativeClassificationList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-12 ng-star-inserted']");
     List<WebElement> initiativeClassificationItem = getElement(initiativeClassificationList).findElements(By.tagName("li"));
 
-    public void SelectInitiativeClassification(){
-        initiativeClassificationItem.get(1).click();
+    public void SelectInitiativeClassification(int index){
+        initiativeClassificationItem.get(index).click();
     }
 }

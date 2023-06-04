@@ -2,6 +2,7 @@
 <suite name="System Test For all Happy Pass ">
     <suite-files preserve-order="true">
         <suite-file path="SearchSuite.xml"/>
+        <suite-file path="VerifyFromFieldsAreMandatoryFieldsSuite.xml"/>
         <suite-file path="CompleteInitiativeDataSuite.xml"/>
         <suite-file path="BackToExistInitiativeListSuite.xml"/>
         <suite-file path="CancelCompleteInitiativeDataSuite.xml"/>

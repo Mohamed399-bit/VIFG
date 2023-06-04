@@ -4,7 +4,7 @@
  *
  * ver          Developer          Date        Comments
  * ----- ---------------------  ----------  ----------------------------------------
- * 1.00  Eng. Mohamed Abden 22/05/2023 - Script created.
+ * 1.00  Eng. Mohamed Abden 24/05/2023 - Script created.
  */
 package SearchFeatures;
 
@@ -14,23 +14,19 @@ import pages.*;
 import tests.TestBase;
 import utilities.SetURL;
 
-public class SearchByProgramNameTest extends TestBase {
+public class SearchByInvalidProgramNameTest extends TestBase {
 
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
     VRPProgramListPage vrpProgramListObject;
 
-    @Test(priority = 5)
+    @Test(priority = 10)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By Valid Program Name")
+    @Description("Search By InValid Program Name")
     @Feature("Search")
     @Epic("Search")
-    public void searchByProgramName() throws InterruptedException {
-
-        existInitiativesObject = new ExistInitiativesPage(driver);
-        existInitiativesObject.clickOnCompletedInitiatives();
-        existInitiativesObject.getDataForFirstInitiative();
+    public void searchByInvalidProgramName() throws InterruptedException {
 
         homeObject = new HomePage(driver);
         homeObject.clickOnSearchIcon();
@@ -39,13 +35,14 @@ public class SearchByProgramNameTest extends TestBase {
         searchObject.clickOnVRPProgramList();
 
         vrpProgramListObject = new VRPProgramListPage(driver);
-        vrpProgramListObject.selectProgramName(existInitiativesObject.programNameTxt);
+        vrpProgramListObject.selectProgramName("ascdfsasds");
         searchObject.clickOnSearchButton();
 
-        existInitiativesObject.VerifyThatSearchByProgramNameIsTrue(existInitiativesObject.programNameTxt);
-        //searchObject.clickOnClearButton();
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.VerifyThatMessageWhenSearchByInvalidData("نأسف، لم يتم العثور على المبادرة نأمل المحاولة مرة اخرى");
+
         SetURL.refreshPage();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 }

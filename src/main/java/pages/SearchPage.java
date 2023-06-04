@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 10/05/2023 - Script created.
+ */
 package pages;
 
 import org.openqa.selenium.*;
@@ -12,7 +20,7 @@ public class SearchPage extends PageBase{
         wait =new WebDriverWait(driver,40);
     }
 
-    By govAgencyCodeList = By.xpath("//ncgr-dropdown[@formcontrolname='govAgencyCode']");
+    public static By govAgencyCodeList = By.xpath("//ncgr-dropdown[@formcontrolname='govAgencyCode']");
     By initiativeIdTxt = By.xpath("//input[@formcontrolname='initiativeId']");
     By durationTxt = By.xpath("//input[@class='ncgr-inputtext ncgr-component ncgr-element ncgr-inputnumber__input']");
     By VRPProgramList = By.xpath("//ncgr-dropdown[@formcontrolname='vrpCode']");
@@ -33,6 +41,7 @@ public class SearchPage extends PageBase{
         setTextWebElement(initiativeIdTxt,id);
     }
     public void searchByDuration(String numberOfMonths){
+        waitUntilLoaderDisappear();
         System.out.println("Search Number of months : " + numberOfMonths);
         setTextWebElement(durationTxt,numberOfMonths);
     }
@@ -45,6 +54,8 @@ public class SearchPage extends PageBase{
     }
 
     public void searchByUIC(String UIC) throws InterruptedException {
+        Thread.sleep(1900);
+        waitUntilLoaderDisappear();
         System.out.println("Search for UIC : " + UIC);
         clickOnButtonUsingJavaScript(getElement(UICTxt));
         setTextWebElement(UICTxt,UIC);

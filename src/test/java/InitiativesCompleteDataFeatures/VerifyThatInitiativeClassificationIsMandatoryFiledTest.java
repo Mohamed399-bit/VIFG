@@ -4,52 +4,62 @@
  *
  * ver          Developer          Date        Comments
  * ----- ---------------------  ----------  ----------------------------------------
- * 1.00  Eng. Mohamed Abden 25/05/2023 - Script created.
+ * 1.00  Eng. Mohamed Abden 30/05/2023 - Script created.
  */
+
 package InitiativesCompleteDataFeatures;
 
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
+import tests.SavePopupPage;
 import tests.TestBase;
 import utilities.Helper;
+import utilities.SetURL;
 
-public class BackToExistInitiativePageTest extends TestBase {
+public class VerifyThatInitiativeClassificationIsMandatoryFiledTest extends TestBase {
 
+    ExistInitiativesPage existInitiativesObject;
     InitiativeDetailsPage initiativeDetailsObject;
     initiativeFundingStatusFiledPage initiativeFundingStatusFiledObject;
-    InitiativeClassificationPage initiativeClassificationObject;
     InitiativeAchievedSavingsPage initiativeAchievedSavingsObject;
     OwnerEntityPage ownerEntityObject;
     CalenderPage calenderObject;
-    HomePage homeObject;
+    SavePopupPage savePopupObject;
+    ErrorMessagePage errorMessageObject;
+
     int randomNumMonth = Helper.generateRandomNumber2(0,11);
     int randomYear = Helper.generateRandomNumber2(2020,2023);
     int randomNumDay = Helper.generateRandomNumber2(1,30);
     int durationNumber = Helper.generateRandomNumber2(10,30);
-    @Test(priority = 4)
+
+    @Test(priority = 7)
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Back To Exist Initiative Page")
-    @Feature("Back To Exist Initiative Page")
+    @Description("Verify That Initiative Classification Is Mandatory Filed")
+    @Feature("Complete Data For Uncompleted Initiative")
     @Epic("Uncompleted Initiative")
-    public void BackToExistInitiativePage() throws InterruptedException {
+    public void VerifyThatInitiativeClassificationIsMandatoryFiled() throws InterruptedException {
+
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnUnCompletedInitiatives();
+        Thread.sleep(2000);
+        existInitiativesObject.getDataForFirstInitiative();
+        existInitiativesObject.scrollDown();
+        existInitiativesObject.clickOnEditInitiativeNumber(existInitiativesObject.UICNumber);
+        System.out.println(existInitiativesObject.initiativeNameTxt);
 
         initiativeDetailsObject = new InitiativeDetailsPage(driver);
+        initiativeDetailsObject.waitUntilPageLoaded();
         initiativeDetailsObject.enterStrategicObjective(Helper.generateRandomWords2(50));
         initiativeDetailsObject.clickOnOwnerList();
 
         ownerEntityObject = new OwnerEntityPage(driver);
-        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,50));
+        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,20));
 
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 
         initiativeFundingStatusFiledObject = new initiativeFundingStatusFiledPage(driver);
-        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(Helper.generateRandomNumber2(0,4));
-
-        initiativeDetailsObject.clickOnInitiativeClassification();
-
-        initiativeClassificationObject = new InitiativeClassificationPage(driver);
-        initiativeClassificationObject.SelectInitiativeClassification(Helper.generateRandomNumber2(0,1));
+        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(1);
 
         initiativeDetailsObject.enterApprovedCosts(Helper.generateRandomNumber(5)+"000");
         initiativeDetailsObject.clickOnEditIcon();
@@ -66,10 +76,18 @@ public class BackToExistInitiativePageTest extends TestBase {
         calenderObject.selectDay(Integer.toString(randomNumDay));
 
         initiativeDetailsObject.enterInitiativeDurationPerMonth(Integer.toString(durationNumber));
+        initiativeDetailsObject.clickOnSaveButton();
+
+        savePopupObject = new SavePopupPage(driver);
+        savePopupObject.clickOnSaveButton();
+
+        errorMessageObject = new ErrorMessagePage(driver);
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
+
+        initiativeDetailsObject.VerifyFromInitiativeClassificationValidationMessage("برجاء اختيار تصنيف المبادرة في خطة التنفيذ للبرنامج");
         initiativeDetailsObject.clickOnBackButton();
-        Thread.sleep(3000);
-        homeObject = new HomePage(driver);
-        homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
+
+        SetURL.refreshPage();
 
         Thread.sleep(2000);
 

@@ -12,39 +12,36 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
 import tests.TestBase;
+import utilities.Helper;
 import utilities.SetURL;
 
-public class SearchByEntityTest extends TestBase {
+public class SearchByInvalidEntityTest extends TestBase {
 
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
     OwnerEntitySearchPage ownerEntitySearchObject;
 
-    @Test(priority = 6)
+    @Test(priority = 8)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By Valid Entity Name")
+    @Description("Search By InValid Invalid Entity")
     @Feature("Search")
     @Epic("Search")
-    public void SearchByEntity() throws InterruptedException {
-
-        existInitiativesObject = new ExistInitiativesPage(driver);
-        existInitiativesObject.clickOnCompletedInitiatives();
-        existInitiativesObject.getDataForFirstInitiative();
+    public void SearchByInvalidEntity() throws InterruptedException {
 
         homeObject = new HomePage(driver);
         homeObject.clickOnSearchIcon();
-        //homeObject.scrollDown();
+        homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
         searchObject.clickOnGovAgencyCodeList();
 
         ownerEntitySearchObject = new OwnerEntitySearchPage(driver);
-        ownerEntitySearchObject.selectEntityName(existInitiativesObject.govOwnerTxt);
-        searchObject.clickOnSearchButton2();
+        ownerEntitySearchObject.selectEntityName2(Helper.generateRandomNumber2(70,120));
+        searchObject.clickOnSearchButton();
 
-        existInitiativesObject.VerifyThatSearchByEntityNameIsTrue(existInitiativesObject.govOwnerTxt);
-        searchObject.clickOnClearButton();
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.VerifyThatMessageWhenSearchByInvalidData("نأسف، لم يتم العثور على المبادرة نأمل المحاولة مرة اخرى");
 
         SetURL.refreshPage();
 

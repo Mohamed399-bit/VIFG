@@ -40,7 +40,8 @@ public class HomePage extends PageBase{
         clickButton(getExistIntLink);
     }
 
-    public void clickOnSearchIcon(){
+    public void clickOnSearchIcon() throws InterruptedException {
+        Thread.sleep(2000);
         waitUntilLoaderDisappear();
         clickButton(searchFiledIcon);
     }

@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 22/05/2023 - Script created.
+ */
 package SearchFeatures;
 
 import io.qameta.allure.*;
@@ -13,7 +21,7 @@ public class SearchByUICTest extends TestBase {
 
     @Test(priority = 2)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By UIC")
+    @Description("Search By Valid UIC")
     @Feature("Search")
     @Epic("Search")
     public void searchByUIC() throws InterruptedException {

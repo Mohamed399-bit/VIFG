@@ -34,4 +34,14 @@ public class InitiativeAchievedSavingsPage extends PageBase{
         inputText.sendKeys(value);
 
     }
+
+    public void clearInitiativeAchievedSavings() throws InterruptedException {
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(initiativeAchievedSavingsTxt));
+        WebElement inputText = getElement(initiativeAchievedSavingsTxt).findElement(By.tagName("input"));
+        //clickOnButtonUsingJavaScript(inputText);
+        inputText.clear();
+        Thread.sleep(1000);
+
+    }
 }

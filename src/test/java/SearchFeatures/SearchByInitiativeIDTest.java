@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 22/05/2023 - Script created.
+ */
 package SearchFeatures;
 
 import io.qameta.allure.*;
@@ -13,7 +21,7 @@ public class SearchByInitiativeIDTest extends TestBase {
     SearchPage searchObject;
     @Test(priority = 4)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By Initiative Id")
+    @Description("Search By Valid Initiative Id")
     @Feature("Search")
     @Epic("Search")
     public void searchByInitiativeId() throws InterruptedException {

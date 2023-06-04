@@ -4,7 +4,7 @@
  *
  * ver          Developer          Date        Comments
  * ----- ---------------------  ----------  ----------------------------------------
- * 1.00  Eng. Mohamed Abden 22/05/2023 - Script created.
+ * 1.00  Eng. Mohamed Abden 24/05/2023 - Script created.
  */
 package SearchFeatures;
 
@@ -12,38 +12,34 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
 import tests.TestBase;
+import utilities.Helper;
 import utilities.SetURL;
 
-public class SearchByDurationTest extends TestBase {
+public class SearchByInvalidInitiativeIDTest extends TestBase {
 
     HomePage homeObject;
     ExistInitiativesPage existInitiativesObject;
     SearchPage searchObject;
-
-    @Test(priority = 3)
+    @Test(priority = 9)
     @Severity(SeverityLevel.NORMAL)
-    @Description("Search By Valid Duration")
+    @Description("Search By InValid Initiative ID")
     @Feature("Search")
     @Epic("Search")
-    public void searchByDuration() throws InterruptedException {
-
-        existInitiativesObject = new ExistInitiativesPage(driver);
-        existInitiativesObject.clickOnCompletedInitiatives();
-        existInitiativesObject.getDataForFirstInitiative();
+    public void SearchByInvalidInitiativeID() throws InterruptedException {
 
         homeObject = new HomePage(driver);
         homeObject.clickOnSearchIcon();
         homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
-        //searchObject.clickOnClearButton();
-        searchObject.searchByDuration(existInitiativesObject.durationTxt);
+        searchObject.searchByInitiativeId(Helper.generateRandomNumber(7));
         searchObject.clickOnSearchButton();
 
-        existInitiativesObject.VerifyThatSearchByDurationIsTrue(existInitiativesObject.durationTxt);
-        //searchObject.clickOnClearButton();
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.VerifyThatMessageWhenSearchByInvalidData("نأسف، لم يتم العثور على المبادرة نأمل المحاولة مرة اخرى");
+
         SetURL.refreshPage();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
     }
 }

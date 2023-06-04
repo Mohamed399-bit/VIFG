@@ -21,12 +21,12 @@ public class OwnerEntityPage extends PageBase{
         jse = (JavascriptExecutor) driver;
     }
 
-    By ownerEntityList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-10 ng-star-inserted']");
+    By ownerEntityList = By.xpath("//ul[@role='listbox']");
     List<WebElement> ownerEntityItem = getElement(ownerEntityList).findElements(By.tagName("li"));
     public void SelectEntity(int index) throws InterruptedException {
         Thread.sleep(1500);
-        scrollToBottom2();
-        System.out.println("Size : " + ownerEntityItem.size());
+        //scrollToBottom2();
+       // System.out.println("Size : " + ownerEntityItem.size());
         ownerEntityItem.get(index).click();
     }
 }

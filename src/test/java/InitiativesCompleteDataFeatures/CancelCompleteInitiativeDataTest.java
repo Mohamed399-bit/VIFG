@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) NCGR 2023.
+ * All Rights Reserved.
+ *
+ * ver          Developer          Date        Comments
+ * ----- ---------------------  ----------  ----------------------------------------
+ * 1.00  Eng. Mohamed Abden 24/05/2023 - Script created.
+ */
 package InitiativesCompleteDataFeatures;
 
 import io.qameta.allure.*;
@@ -36,12 +44,12 @@ public class CancelCompleteInitiativeDataTest extends TestBase {
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 
         initiativeFundingStatusFiledObject = new initiativeFundingStatusFiledPage(driver);
-        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus();
+        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(Helper.generateRandomNumber2(0,4));
 
         initiativeDetailsObject.clickOnInitiativeClassification();
 
         initiativeClassificationObject = new InitiativeClassificationPage(driver);
-        initiativeClassificationObject.SelectInitiativeClassification();
+        initiativeClassificationObject.SelectInitiativeClassification(Helper.generateRandomNumber2(0,1));
 
         initiativeDetailsObject.enterApprovedCosts(Helper.generateRandomNumber(5)+"000");
         initiativeDetailsObject.clickOnEditIcon();

@@ -57,7 +57,7 @@ public class ExistInitiativesPage extends PageBase {
 
     public void scrollDown() throws InterruptedException {
         scrollToBottom2();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
     }
 
     public void clickOnViewInitiativeNumber(String number) {
@@ -208,6 +208,13 @@ public class ExistInitiativesPage extends PageBase {
             }
             clickOnButtonUsingJavaScript(getElement(nextBtn));
         }
+    }
+
+    public void VerifyThatMessageWhenSearchByInvalidData(String message){
+        waitUntilLoaderDisappear();
+        WebElement tBody = getElement(table).findElement(By.tagName("tbody"));
+        Assert.assertEquals(tBody.getText(),message);
+        System.out.println("Error Message is : " + tBody.getText());
     }
     }
 

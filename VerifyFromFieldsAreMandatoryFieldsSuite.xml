@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Verify From Fields Are Mandatory ">
+    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <test name="Verify From Fields Are Mandatory " preserve-order="true">
+        <classes>
+            <class name="InitiativesCompleteDataFeatures.LoginTest"/>
+            <class name="InitiativesCompleteDataFeatures.OpenInitiativeTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatFundingStatusFiledIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatInitiativeClassificationIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatApprovedCostsIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatInitiativeAchievedSavingsIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatInitiativeDescriptionIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatStartDateIsMandatoryFiledTest"/>
+            <class name="InitiativesCompleteDataFeatures.VerifyThatDurationIsMandatoryFiledTest"/>
+        </classes>
+    </test>
+</suite>

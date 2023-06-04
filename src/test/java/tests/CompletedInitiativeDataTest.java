@@ -31,12 +31,12 @@ public class CompletedInitiativeDataTest extends TestBase{
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 
         initiativeFundingStatusFiledObject = new initiativeFundingStatusFiledPage(driver);
-        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus();
+        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(Helper.generateRandomNumber2(0,4));
 
         initiativeDetailsObject.clickOnInitiativeClassification();
 
         initiativeClassificationObject = new InitiativeClassificationPage(driver);
-        initiativeClassificationObject.SelectInitiativeClassification();
+        initiativeClassificationObject.SelectInitiativeClassification(Helper.generateRandomNumber2(0,1));
 
         initiativeDetailsObject.enterApprovedCosts(Helper.generateRandomNumber(5)+"000");
         initiativeDetailsObject.clickOnEditIcon();

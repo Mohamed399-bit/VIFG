@@ -34,4 +34,9 @@ public class OwnerEntitySearchPage extends PageBase{
             }
         }
     }
+
+    public void selectEntityName2(int entity){
+        clickOnButtonUsingJavaScript(items.get(entity));
+        System.out.println("Search for entity Name : " + getTxt(SearchPage.govAgencyCodeList));
+    }
 }

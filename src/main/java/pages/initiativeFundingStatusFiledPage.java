@@ -23,8 +23,8 @@ public class initiativeFundingStatusFiledPage extends PageBase{
     By initiativeFundingStatusList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-11 ng-star-inserted']");
     List<WebElement> initiativeFundingStatusItem = getElement(initiativeFundingStatusList).findElements(By.tagName("li"));
 
-    public void SelectInitiativeFundingStatus(){
-
-        initiativeFundingStatusItem.get(1).click();
+    public void SelectInitiativeFundingStatus(int index) throws InterruptedException {
+        Thread.sleep(1500);
+        initiativeFundingStatusItem.get(index).click();
     }
 }

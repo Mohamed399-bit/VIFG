@@ -45,6 +45,13 @@ public class InitiativeDetailsPage extends PageBase{
 
     By loaderTable = By.xpath("//i[@class='ncgr-table__loading-icon ncgri ncgri-spin ncgri-spinner']");
     By labelName = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[4]/div/div/div/h3");
+    By validationMessageInitiativeFundingStatus = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[1]/div/span");
+    By validationMessageInitiativeClassification = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[2]/div/span");
+    By validationMessageApprovedCosts = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[3]/div/div/div");
+    By validationMessageInitiativeAchievedSavings = By.xpath("//*[@id=\"ncgr_id_8-table\"]/tfoot/tr/td[1]/span");
+    By validationMessageInitiativeDescription = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[4]/div/div/div/div/div/div/span");
+    By validationMessageStartDate = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[1]/div/div/div");
+    By validationMessageDuration = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[2]/div/div/div");
 
     public void enterStrategicObjective(String Objective)  {
         waitUntilLoaderDisappear();
@@ -106,6 +113,7 @@ public class InitiativeDetailsPage extends PageBase{
         WebElement durationTxt = getElement(initiativeDurationPerMonthTxt).findElement(By.tagName("input"));
         clickOnButtonUsingJavaScript(durationTxt);
         durationTxt.sendKeys(numberOfMonths);
+        scrollToBottom2();
     }
 
     public void clickOnSaveButton(){
@@ -127,5 +135,44 @@ public class InitiativeDetailsPage extends PageBase{
         System.out.println("Initiative Id : " + getTxt(initiativeIdTxt));
         Assert.assertEquals(getTxt(programNameTxt),IProgram);
         System.out.println("Initiative Program Name : " + getTxt(programNameTxt));
+    }
+
+    public void waitUntilPageLoaded(){
+        waitUntilLoaderDisappear();
+    }
+
+    public void VerifyFromInitiativeFundingStatusValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageInitiativeFundingStatus),message);
+        System.out.println("Validation message for Initiative Funding Status : " +  getTxt(validationMessageInitiativeFundingStatus));
+    }
+
+    public void VerifyFromInitiativeClassificationValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageInitiativeClassification),message);
+        System.out.println("Validation message for Initiative Classification : " +  getTxt(validationMessageInitiativeClassification));
+    }
+
+    public void VerifyFromApprovedCostsValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageApprovedCosts),message);
+        System.out.println("Validation message for Approved Costs : " +  getTxt(validationMessageApprovedCosts));
+    }
+
+    public void VerifyFromInitiativeAchievedSavingsValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageInitiativeAchievedSavings),message);
+        System.out.println("Validation message for Initiative Achieved Savings : " +  getTxt(validationMessageInitiativeAchievedSavings));
+    }
+
+    public void VerifyFromInitiativeDescriptionValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageInitiativeDescription),message);
+        System.out.println("Validation message for Initiative Description : " +  getTxt(validationMessageInitiativeDescription));
+    }
+
+    public void VerifyFromStartDateValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageStartDate),message);
+        System.out.println("Validation message for Start Date : " +  getTxt(validationMessageStartDate));
+    }
+
+    public void VerifyFromDurationValidationMessage(String message){
+        Assert.assertEquals(getTxt(validationMessageDuration),message);
+        System.out.println("Validation message for Duration : " +  getTxt(validationMessageDuration));
     }
 }
