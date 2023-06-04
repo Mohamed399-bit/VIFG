@@ -76,6 +76,7 @@ public class InitiativeDetailsPage extends PageBase{
         clickOnButtonUsingJavaScript(arrow);
     }
     public void clickOnInitiativeFundingStatus(){
+        scrollToBottom3();
         List<WebElement> y = getElement(initiativeFundingStatusFiled).findElements(By.tagName("div"));
         WebElement arrow2 = y.get(y.size()-1);
         clickOnButtonUsingJavaScript(arrow2);
@@ -117,14 +118,17 @@ public class InitiativeDetailsPage extends PageBase{
     }
 
     public void clickOnSaveButton(){
+        scrollToBottom();
         clickButton(saveBtn);
     }
 
     public void clickOnCancelButton(){
+        scrollToBottom();
         clickButton(cancelBtn);
     }
 
     public void clickOnBackButton(){
+        scrollToBottom();
         clickButton(backBtn);
     }
 

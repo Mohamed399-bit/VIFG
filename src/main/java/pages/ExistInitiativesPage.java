@@ -210,7 +210,8 @@ public class ExistInitiativesPage extends PageBase {
         }
     }
 
-    public void VerifyThatMessageWhenSearchByInvalidData(String message){
+    public void VerifyThatMessageWhenSearchByInvalidData(String message) throws InterruptedException {
+        Thread.sleep(2000);
         waitUntilLoaderDisappear();
         WebElement tBody = getElement(table).findElement(By.tagName("tbody"));
         Assert.assertEquals(tBody.getText(),message);

@@ -46,7 +46,7 @@ public class VerifyThatApprovedCostsIsMandatoryFiledTest extends TestBase {
         existInitiativesObject.getDataForFirstInitiative();
         existInitiativesObject.scrollDown();
         existInitiativesObject.clickOnEditInitiativeNumber(existInitiativesObject.UICNumber);
-        System.out.println(existInitiativesObject.initiativeNameTxt);
+        System.out.println("Initiative Name : " + existInitiativesObject.initiativeNameTxt);
 
         initiativeDetailsObject = new InitiativeDetailsPage(driver);
         initiativeDetailsObject.waitUntilPageLoaded();
