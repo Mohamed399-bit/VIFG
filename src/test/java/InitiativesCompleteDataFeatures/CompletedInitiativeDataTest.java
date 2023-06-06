@@ -11,7 +11,6 @@ package InitiativesCompleteDataFeatures;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
-import tests.SavePopupPage;
 import tests.TestBase;
 import utilities.Helper;
 import utilities.SetURL;

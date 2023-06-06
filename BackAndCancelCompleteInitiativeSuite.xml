@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Back To Exist Initiative List From Initiative Details ">
+<suite name="Back And Cancel Complete Initiative Suite ">
     <!--parameter name="browser" value="chrome-headless"></parameter -->
-    <test name="Back To Exist Initiative List From Initiative Details " preserve-order="true">
+    <test name="Back And Cancel Complete Initiative Suite " preserve-order="true">
         <classes>
             <class name="InitiativesCompleteDataFeatures.LoginTest"/>
             <class name="InitiativesCompleteDataFeatures.OpenInitiativeTest"/>
