@@ -25,7 +25,7 @@ public class SearchByInvalidEntityTest extends TestBase {
     @Test(priority = 8)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By InValid Invalid Entity")
-    @Feature("Search By Invalid Entity")
+    @Feature("Search By Entity Name")
     @Epic("Search")
     public void SearchByInvalidEntity() throws InterruptedException {
 

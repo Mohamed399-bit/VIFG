@@ -4,7 +4,6 @@
         <suite-file path="SearchSuite.xml"/>
         <suite-file path="VerifyFromFieldsAreMandatoryFieldsSuite.xml"/>
         <suite-file path="CompleteInitiativeDataSuite.xml"/>
-        <suite-file path="BackToExistInitiativeListSuite.xml"/>
-        <suite-file path="CancelCompleteInitiativeDataSuite.xml"/>
+        <suite-file path="BackAndCancelCompleteInitiativeSuite.xml"/>
     </suite-files>
 </suite>
