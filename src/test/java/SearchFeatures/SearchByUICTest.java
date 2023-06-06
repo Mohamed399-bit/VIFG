@@ -22,7 +22,7 @@ public class SearchByUICTest extends TestBase {
     @Test(priority = 2)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By Valid UIC")
-    @Feature("Search")
+    @Feature("Search By UIC")
     @Epic("Search")
     public void searchByUIC() throws InterruptedException {
 

@@ -15,7 +15,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -50,9 +49,6 @@ public class TestBase {
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(chromeOption());
-        } else if (browser.equalsIgnoreCase("opera")) {
-            WebDriverManager.operadriver().setup();
-            driver = new OperaDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
@@ -63,8 +59,8 @@ public class TestBase {
 
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
             options.addArguments("--window-size=1920,1080");
+            options.setHeadless(true);
             driver = new ChromeDriver(options);
         }
 

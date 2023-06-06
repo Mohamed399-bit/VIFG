@@ -17,8 +17,7 @@ public class ErrorMessagePage extends PageBase{
     public ErrorMessagePage(WebDriver driver) {
         super(driver);
     }
-
-    By errorMessage = By.xpath("//div[@class='ng-tns-c63-21 ng-trigger ng-trigger-messageState ncgr-toast--message-error ncgr-toast__message']");
+    By errorMessage = By.xpath("//div[@role='alert']");
 
     public void VerifyThatErrorMessageDisplay(String message){
            // برجاء ادخال جميع البيانات المطلوبة بشكل صحيح

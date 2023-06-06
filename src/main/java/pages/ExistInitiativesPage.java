@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -211,7 +212,7 @@ public class ExistInitiativesPage extends PageBase {
     }
 
     public void VerifyThatMessageWhenSearchByInvalidData(String message) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         waitUntilLoaderDisappear();
         WebElement tBody = getElement(table).findElement(By.tagName("tbody"));
         Assert.assertEquals(tBody.getText(),message);

@@ -15,10 +15,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class HomePage extends PageBase{
     public HomePage(WebDriver driver) {
         super(driver);
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 45);
         jse = (JavascriptExecutor) driver;
     }
     By divUserName = By.cssSelector("div.d-flex.justify-content-between.align-items-center");

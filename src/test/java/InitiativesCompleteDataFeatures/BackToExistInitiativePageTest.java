@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import tests.TestBase;
 import utilities.Helper;
+import utilities.SetURL;
 
 public class BackToExistInitiativePageTest extends TestBase {
 
@@ -70,6 +71,8 @@ public class BackToExistInitiativePageTest extends TestBase {
         Thread.sleep(3000);
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
+
+        SetURL.refreshPage();
 
         Thread.sleep(2000);
 

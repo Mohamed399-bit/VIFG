@@ -15,10 +15,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class InitiativeAchievedSavingsPage extends PageBase{
     public InitiativeAchievedSavingsPage(WebDriver driver) {
         super(driver);
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(driver, 45);
         jse = (JavascriptExecutor) driver;
     }
 

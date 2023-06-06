@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class InitiativeDetailsPage extends PageBase{
@@ -24,7 +25,7 @@ public class InitiativeDetailsPage extends PageBase{
         super(driver);
         jse = (JavascriptExecutor) driver;
         actions = new Actions(driver);
-        wait = new WebDriverWait(driver, 50);
+        wait = new WebDriverWait(driver, 45);
     }
 
     By strategicObjectiveTxt = By.id("strategicObjectiveName");
@@ -35,7 +36,9 @@ public class InitiativeDetailsPage extends PageBase{
     By editIcon = By.xpath("//button[@icon='ncgri ncgri-pencil']");
     By approvedInitiativeDescriptionTxt = By.id("approvedInitiativeDescription");
     By calendarBtn = By.xpath("//button[@class='ncgr-datepicker-icon-button icon-filled-calendar']");
-    By initiativeDurationPerMonthTxt = By.id("initiativeDurationPerMonth");
+    By
+
+            initiativeDurationPerMonthTxt = By.id("initiativeDurationPerMonth");
     By cancelBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-danger ncgr-button ncgr-component']");
     By saveBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-primary ncgr-button ncgr-component']");
     By backBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-outlined ncgr-button-gray-75 ncgr-button ncgr-component']");
@@ -52,6 +55,7 @@ public class InitiativeDetailsPage extends PageBase{
     By validationMessageInitiativeDescription = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[4]/div/div/div/div/div/div/span");
     By validationMessageStartDate = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[1]/div/div/div");
     By validationMessageDuration = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[2]/div/div/div");
+    By durationLabel = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[2]/div/label");
 
     public void enterStrategicObjective(String Objective)  {
         waitUntilLoaderDisappear();
@@ -114,7 +118,8 @@ public class InitiativeDetailsPage extends PageBase{
         WebElement durationTxt = getElement(initiativeDurationPerMonthTxt).findElement(By.tagName("input"));
         clickOnButtonUsingJavaScript(durationTxt);
         durationTxt.sendKeys(numberOfMonths);
-        scrollToBottom2();
+        clickButton(durationLabel);
+        scrollToBottom();
     }
 
     public void clickOnSaveButton(){

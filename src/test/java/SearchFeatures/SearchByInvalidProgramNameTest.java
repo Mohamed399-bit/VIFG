@@ -24,7 +24,7 @@ public class SearchByInvalidProgramNameTest extends TestBase {
     @Test(priority = 10)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By InValid Program Name")
-    @Feature("Search")
+    @Feature("Search By Program Name")
     @Epic("Search")
     public void searchByInvalidProgramName() throws InterruptedException {
 

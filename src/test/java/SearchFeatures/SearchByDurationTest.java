@@ -23,7 +23,7 @@ public class SearchByDurationTest extends TestBase {
     @Test(priority = 3)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By Valid Duration")
-    @Feature("Search")
+    @Feature("Search By Duration")
     @Epic("Search")
     public void searchByDuration() throws InterruptedException {
 

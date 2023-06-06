@@ -59,7 +59,7 @@ public class VerifyThatInitiativeClassificationIsMandatoryFiledTest extends Test
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 
         initiativeFundingStatusFiledObject = new initiativeFundingStatusFiledPage(driver);
-        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(1);
+        initiativeFundingStatusFiledObject.SelectInitiativeFundingStatus(Helper.generateRandomNumber2(0,3));
 
         initiativeDetailsObject.enterApprovedCosts(Helper.generateRandomNumber(5)+"000");
         initiativeDetailsObject.clickOnEditIcon();

@@ -24,7 +24,7 @@ public class SearchByInvalidUICTest extends TestBase {
     @Test(priority = 11)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By Invalid UIC")
-    @Feature("Search")
+    @Feature("Search By UIC")
     @Epic("Search")
     public void searchByInvalidUIC() throws InterruptedException {
 

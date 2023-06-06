@@ -24,7 +24,7 @@ public class SearchByInvalidDurationTest extends TestBase {
     @Test(priority = 7)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By InValid Duration")
-    @Feature("Search")
+    @Feature("Search By Duration")
     @Epic("Search")
     public void searchByInvalidDuration() throws InterruptedException {
 

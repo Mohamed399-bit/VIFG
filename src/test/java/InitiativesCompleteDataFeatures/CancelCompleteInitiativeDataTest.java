@@ -16,6 +16,7 @@ import utilities.Helper;
 
 public class CancelCompleteInitiativeDataTest extends TestBase {
 
+    ExistInitiativesPage existInitiativesObject;
     InitiativeDetailsPage initiativeDetailsObject;
     initiativeFundingStatusFiledPage initiativeFundingStatusFiledObject;
     InitiativeClassificationPage initiativeClassificationObject;
@@ -33,6 +34,14 @@ public class CancelCompleteInitiativeDataTest extends TestBase {
     @Feature("Cancel Complete Initiative Data")
     @Epic("Uncompleted Initiative")
     public void CancelCompleteInitiativeData() throws InterruptedException {
+
+        existInitiativesObject = new ExistInitiativesPage(driver);
+        existInitiativesObject.clickOnUnCompletedInitiatives();
+        Thread.sleep(2000);
+        existInitiativesObject.getDataForFirstInitiative();
+        existInitiativesObject.scrollDown();
+        existInitiativesObject.clickOnEditInitiativeNumber(existInitiativesObject.UICNumber);
+        System.out.println("Initiative Name : " + existInitiativesObject.initiativeNameTxt);
 
         initiativeDetailsObject = new InitiativeDetailsPage(driver);
         initiativeDetailsObject.enterStrategicObjective(Helper.generateRandomWords2(50));
@@ -68,7 +77,7 @@ public class CancelCompleteInitiativeDataTest extends TestBase {
         initiativeDetailsObject.enterInitiativeDurationPerMonth(Integer.toString(durationNumber));
         initiativeDetailsObject.clickOnCancelButton();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
 

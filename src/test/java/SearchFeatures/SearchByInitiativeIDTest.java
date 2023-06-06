@@ -22,7 +22,7 @@ public class SearchByInitiativeIDTest extends TestBase {
     @Test(priority = 4)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By Valid Initiative Id")
-    @Feature("Search")
+    @Feature("Search By Initiative Id")
     @Epic("Search")
     public void searchByInitiativeId() throws InterruptedException {
 

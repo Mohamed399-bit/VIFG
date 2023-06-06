@@ -11,13 +11,14 @@ package pages;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class SearchPage extends PageBase{
     public SearchPage(WebDriver driver) {
         super(driver);
         jse = (JavascriptExecutor) driver;
-        wait =new WebDriverWait(driver,40);
+        wait =new WebDriverWait(driver, 45);
     }
 
     public static By govAgencyCodeList = By.xpath("//ncgr-dropdown[@formcontrolname='govAgencyCode']");

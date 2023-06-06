@@ -21,7 +21,7 @@ public class OwnerEntitySearchPage extends PageBase{
         jse = (JavascriptExecutor) driver;
     }
 
-    By programList = By.xpath("//ul[@class='ncgr-dropdown__items ng-tns-c68-1 ng-star-inserted']");
+    By programList = By.xpath("//ul[@role='listbox']");
     List<WebElement> items = getElement(programList).findElements(By.tagName("li"));
 
     public void selectEntityName(String entity){
