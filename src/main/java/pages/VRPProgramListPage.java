@@ -20,7 +20,7 @@ public class VRPProgramListPage extends PageBase{
         super(driver);
         jse = (JavascriptExecutor) driver;
     }
-    By programList = By.id("ncgr_id_2_list");
+    By programList = By.xpath("//ul[@role='listbox']");
     List<WebElement> items = getElement(programList).findElements(By.tagName("li"));
 
     public void selectProgramName(String program){
