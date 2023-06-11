@@ -36,9 +36,7 @@ public class InitiativeDetailsPage extends PageBase{
     By editIcon = By.xpath("//button[@icon='ncgri ncgri-pencil']");
     By approvedInitiativeDescriptionTxt = By.id("approvedInitiativeDescription");
     By calendarBtn = By.xpath("//button[@class='ncgr-datepicker-icon-button icon-filled-calendar']");
-    By
-
-            initiativeDurationPerMonthTxt = By.id("initiativeDurationPerMonth");
+    By initiativeDurationPerMonthTxt = By.id("initiativeDurationPerMonth");
     By cancelBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-danger ncgr-button ncgr-component']");
     By saveBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-primary ncgr-button ncgr-component']");
     By backBtn = By.xpath("//button[@class='ncgr-ripple ncgr-element ncgr-button-outlined ncgr-button-gray-75 ncgr-button ncgr-component']");

@@ -88,7 +88,6 @@ public class PageBase {
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,100)");
     }
-
     protected void scrollUntilElement1(By element) throws InterruptedException {
         jse.executeScript("arguments[0].scrollIntoView(true);", getElement(element));
         Thread.sleep(1000);
