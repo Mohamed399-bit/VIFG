@@ -11,18 +11,20 @@ package InitiativesCompleteDataFeatures;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.ExistInitiativesPage;
+import pages.InitiativeDetails2Page;
 import pages.InitiativeDetailsPage;
 import tests.TestBase;
 
-public class OpenInitiativeTest extends TestBase {
+public class OpenInitiativeDetailsTest extends TestBase {
 
     ExistInitiativesPage existInitiativesObject;
-    InitiativeDetailsPage initiativeDetailsObject;
+    InitiativeDetails2Page initiativeDetailsObject;
+    InitiativeDetailsPage initiativeDetailsObject2;
 
     public static String UICNumber;
-    @Test(priority = 2)
+    @Test(priority = 13)
     @Severity(SeverityLevel.CRITICAL)
-    @Description("Open Exist Initiative ")
+    @Description("Open Initiative Details And Click On Complete Data")
     @Feature("Open Exist Initiative")
     @Epic("Uncompleted Initiative")
     public void OpenExistInitiative() throws InterruptedException {
@@ -33,12 +35,13 @@ public class OpenInitiativeTest extends TestBase {
         existInitiativesObject.getDataForFirstInitiative();
         UICNumber = existInitiativesObject.UICNumber;
         existInitiativesObject.scrollDown();
-        existInitiativesObject.clickOnEditInitiativeNumber(existInitiativesObject.UICNumber);
-        System.out.println("Initiative Name : " + existInitiativesObject.initiativeNameTxt);
+        existInitiativesObject.clickOnViewInitiativeNumber(existInitiativesObject.UICNumber);
 
-        initiativeDetailsObject = new InitiativeDetailsPage(driver);
-        initiativeDetailsObject.VerifyFromInitiativeDetailsOpenTure(existInitiativesObject.UICNumber,
-                existInitiativesObject.initiativeIdTxt,existInitiativesObject.programNameTxt);
+        initiativeDetailsObject = new InitiativeDetails2Page(driver);
+        initiativeDetailsObject.clickOnCompleteData();
+
+        initiativeDetailsObject2 = new InitiativeDetailsPage(driver);
+        initiativeDetailsObject2.VerifyThatCompleteDataPageIsOpen("إكمال البيانات");
 
         Thread.sleep(2000);
 
