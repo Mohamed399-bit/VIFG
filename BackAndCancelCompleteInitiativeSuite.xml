@@ -7,6 +7,8 @@
             <class name="InitiativesCompleteDataFeatures.OpenInitiativeTest"/>
             <class name="InitiativesCompleteDataFeatures.BackToExistInitiativePageTest"/>
             <class name="InitiativesCompleteDataFeatures.CancelCompleteInitiativeDataTest"/>
+            <class name="InitiativesCompleteDataFeatures.OpenPreviousProceduresTest"/>
+            <class name="InitiativesCompleteDataFeatures.OpenInitiativeDetailsTest"/>
         </classes>
     </test>
 </suite>

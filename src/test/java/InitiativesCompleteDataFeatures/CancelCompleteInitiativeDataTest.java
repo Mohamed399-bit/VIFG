@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import tests.TestBase;
 import utilities.Helper;
+import utilities.SetURL;
 
 public class CancelCompleteInitiativeDataTest extends TestBase {
 
@@ -80,6 +81,8 @@ public class CancelCompleteInitiativeDataTest extends TestBase {
         Thread.sleep(2000);
         homeObject = new HomePage(driver);
         homeObject.verifyThatUserLoggedIn("المبادرات القائمة");
+
+        SetURL.refreshPage();
 
         Thread.sleep(2000);
 

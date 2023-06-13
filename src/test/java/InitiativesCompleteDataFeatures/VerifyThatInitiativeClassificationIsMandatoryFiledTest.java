@@ -53,7 +53,7 @@ public class VerifyThatInitiativeClassificationIsMandatoryFiledTest extends Test
         initiativeDetailsObject.clickOnOwnerList();
 
         ownerEntityObject = new OwnerEntityPage(driver);
-        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,20));
+        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,10));
 
         initiativeDetailsObject.clickOnInitiativeFundingStatus();
 

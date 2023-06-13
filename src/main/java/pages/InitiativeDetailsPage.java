@@ -54,6 +54,7 @@ public class InitiativeDetailsPage extends PageBase{
     By validationMessageStartDate = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[1]/div/div/div");
     By validationMessageDuration = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[2]/div/div/div");
     By durationLabel = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/div/div[2]/div/label");
+    By headingSection = By.xpath("//div[@class='heading']");
 
     public void enterStrategicObjective(String Objective)  {
         waitUntilLoaderDisappear();
@@ -181,5 +182,11 @@ public class InitiativeDetailsPage extends PageBase{
     public void VerifyFromDurationValidationMessage(String message){
         Assert.assertEquals(getTxt(validationMessageDuration),message);
         System.out.println("Validation message for Duration : " +  getTxt(validationMessageDuration));
+    }
+
+    public void VerifyThatCompleteDataPageIsOpen(String headingName){
+        waitUntilLoaderDisappear();
+        Assert.assertEquals(getTxt(headingSection),headingName);
+        System.out.println("Heading Section is : " + getTxt(headingSection));
     }
 }

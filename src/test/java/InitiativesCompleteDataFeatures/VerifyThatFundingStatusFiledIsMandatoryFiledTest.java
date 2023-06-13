@@ -43,7 +43,7 @@ public class VerifyThatFundingStatusFiledIsMandatoryFiledTest extends TestBase {
         initiativeDetailsObject.clickOnOwnerList();
 
         ownerEntityObject = new OwnerEntityPage(driver);
-        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,50));
+        ownerEntityObject.SelectEntity(Helper.generateRandomNumber2(0,10));
 
         initiativeDetailsObject.clickOnInitiativeClassification();
 
