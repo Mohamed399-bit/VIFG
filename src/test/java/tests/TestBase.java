@@ -67,6 +67,7 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
         driver.navigate().to("http://10.14.9.35:4250/");
+        //driver.navigate().to("https://loginpp.etimad.sa/Account/Login");
 
         allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()

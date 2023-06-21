@@ -11,7 +11,7 @@ public class SavePopupPage extends PageBase {
 
     }
 
-    By saveBtn = By.xpath("//button[@class='ncgr-element ncgr-button ncgr-component ng-star-inserted']");
+    By saveBtn = By.xpath("//button[@class='ncgr-element ncgr-ripple ncgr-button ncgr-component ng-star-inserted']");
 
     public void clickOnSaveButton(){
         clickButton(saveBtn);

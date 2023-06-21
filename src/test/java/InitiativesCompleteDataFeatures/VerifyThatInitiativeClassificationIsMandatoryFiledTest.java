@@ -81,7 +81,7 @@ public class VerifyThatInitiativeClassificationIsMandatoryFiledTest extends Test
         savePopupObject.clickOnSaveButton();
 
         errorMessageObject = new ErrorMessagePage(driver);
-        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء إدخال جميع البيانات المطلوبة بشكل صحيح");
 
         initiativeDetailsObject.VerifyFromInitiativeClassificationValidationMessage("برجاء اختيار تصنيف المبادرة في خطة التنفيذ للبرنامج");
         initiativeDetailsObject.clickOnBackButton();

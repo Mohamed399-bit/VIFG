@@ -71,7 +71,7 @@ public class VerifyThatFundingStatusFiledIsMandatoryFiledTest extends TestBase {
         savePopupObject.clickOnSaveButton();
 
         errorMessageObject = new ErrorMessagePage(driver);
-        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء إدخال جميع البيانات المطلوبة بشكل صحيح");
 
         initiativeDetailsObject.VerifyFromInitiativeFundingStatusValidationMessage("برجاء اختيار حالة التمويل");
         initiativeDetailsObject.clickOnBackButton();

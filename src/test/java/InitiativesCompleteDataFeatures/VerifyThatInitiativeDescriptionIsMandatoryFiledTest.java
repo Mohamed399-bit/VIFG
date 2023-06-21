@@ -86,9 +86,9 @@ public class VerifyThatInitiativeDescriptionIsMandatoryFiledTest extends TestBas
         savePopupObject.clickOnSaveButton();
 
         errorMessageObject = new ErrorMessagePage(driver);
-        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء إدخال جميع البيانات المطلوبة بشكل صحيح");
 
-        initiativeDetailsObject.VerifyFromInitiativeDescriptionValidationMessage("برجاء ادخال وصف المبادرة المعتمدة");
+        initiativeDetailsObject.VerifyFromInitiativeDescriptionValidationMessage("برجاء إدخال وصف المبادرة المعتمدة");
         initiativeDetailsObject.clickOnBackButton();
 
         SetURL.refreshPage();

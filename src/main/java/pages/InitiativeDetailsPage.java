@@ -16,8 +16,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.time.Duration;
 import java.util.List;
 
 public class InitiativeDetailsPage extends PageBase{
@@ -43,7 +41,6 @@ public class InitiativeDetailsPage extends PageBase{
     By UICTxt = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[1]/div/div/div/div/div[1]/div/p");
     By initiativeIdTxt = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[1]/div/div/div/div/div[2]/div/p");
     By programNameTxt = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[1]/div/div/div/div/div[3]/div/p");
-
     By loaderTable = By.xpath("//i[@class='ncgr-table__loading-icon ncgri ncgri-spin ncgri-spinner']");
     By labelName = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[4]/div/div/div/h3");
     By validationMessageInitiativeFundingStatus = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[1]/div/span");
