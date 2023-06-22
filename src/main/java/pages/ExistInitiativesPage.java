@@ -62,18 +62,21 @@ public class ExistInitiativesPage extends PageBase {
     }
 
     public void clickOnViewInitiativeNumber(String number) {
+        System.out.println("UIC that will open : " + number);
+        waitUntilLoaderDisappear();
         WebElement tableBody = getElement(table).findElement(By.tagName("tbody"));
         List<WebElement> trs = tableBody.findElements(By.tagName("tr"));
-        //System.out.println("trs size : " + trs.size());
         for (WebElement ele : trs) {
             List<WebElement> tds = ele.findElements(By.tagName("td"));
-            //System.out.println("Tds size : " + tds.size());
             if (tds.get(1).getText().equals(number)) {
-                //System.out.println("xxxx : " + tds.get(1).getText());
-                WebElement lastColumn = tds.get(tds.size() - 1);
-                WebElement eyeIcon = lastColumn.findElement(By.xpath("//button[@icon='ncgri ncgri-eye']"));
+                WebElement initiativeName = tds.get(0);
+                initiativeNameTxt = initiativeName.getText();
+                WebElement lastColumn = tds.get(6);
+                WebElement x = lastColumn.findElement(By.tagName("div"));
+                List<WebElement> y = x.findElements(By.tagName("button"));
+                WebElement viewIcon = y.get(0);
                 //System.out.println("Web Element : " + eyeIcon);
-                eyeIcon.click();
+                clickOnButtonUsingAction(viewIcon);
                 break;
             }
         }

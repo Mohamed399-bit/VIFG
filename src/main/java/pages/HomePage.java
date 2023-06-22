@@ -42,7 +42,7 @@ public class HomePage extends PageBase{
 
     public void clickOnSearchIcon() throws InterruptedException {
         waitUntilLoaderDisappear();
-        Thread.sleep(2000);
+        Thread.sleep(2500);
         clickButton(searchFiledIcon);
     }
 

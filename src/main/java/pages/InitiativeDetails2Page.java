@@ -38,10 +38,11 @@ public class InitiativeDetails2Page extends PageBase{
         waitUntilLoaderDisappear();
         scrollToBottom3();
         clickOnButtonUsingJavaScript(tabs.get(1).findElement(By.tagName("a")));
+        scrollToBottom();
     }
 
     public void clickOnBackButton(){
         scrollToBottom();
-        clickButton(backBtn);
+        clickOnButtonUsingJavaScript(getElement(backBtn));
     }
 }

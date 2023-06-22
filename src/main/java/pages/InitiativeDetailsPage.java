@@ -42,7 +42,7 @@ public class InitiativeDetailsPage extends PageBase{
     By initiativeIdTxt = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[1]/div/div/div/div/div[2]/div/p");
     By programNameTxt = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[1]/div/div/div/div/div[3]/div/p");
     By loaderTable = By.xpath("//i[@class='ncgr-table__loading-icon ncgri ncgri-spin ncgri-spinner']");
-    By labelName = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[4]/div/div/div/h3");
+    By labelName = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[5]/div/div/div/h5");
     By validationMessageInitiativeFundingStatus = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[1]/div/span");
     By validationMessageInitiativeClassification = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[2]/div/span");
     By validationMessageApprovedCosts = By.xpath("//*[@id=\"ncgr-tabpanel-0\"]/form/ncgr-card[3]/div/div/div/div[3]/div[3]/div/div/div");
@@ -120,7 +120,7 @@ public class InitiativeDetailsPage extends PageBase{
 
     public void clickOnSaveButton(){
         scrollToBottom();
-        clickButton(saveBtn);
+        clickOnButtonUsingJavaScript(getElement(saveBtn));
     }
 
     public void clickOnCancelButton(){

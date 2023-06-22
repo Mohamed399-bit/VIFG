@@ -22,7 +22,7 @@ public class OpenInitiativeDetailsTest extends TestBase {
     InitiativeDetailsPage initiativeDetailsObject2;
 
     public static String UICNumber;
-    @Test(priority = 13)
+    @Test(priority = 14)
     @Severity(SeverityLevel.CRITICAL)
     @Description("Open Initiative Details And Click On Complete Data")
     @Feature("Open Exist Initiative")
