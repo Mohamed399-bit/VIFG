@@ -1,7 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Back And Cancel Complete Initiative Suite ">
-    <!--parameter name="browser" value="chrome-headless"></parameter -->
-    <test name="Back And Cancel Complete Initiative Suite " preserve-order="true">
+<suite name="Back And Cancel Complete Initiative Suite " parallel="tests">
+
+    <test name="Back And Cancel Complete Initiative Suite " preserve-order="true" >
+        <!--parameter name="browser" value="chrome"/-->
         <classes>
             <class name="InitiativesCompleteDataFeatures.LoginTest"/>
             <class name="InitiativesCompleteDataFeatures.OpenInitiativeTest"/>
@@ -12,4 +13,5 @@
             <class name="InitiativesCompleteDataFeatures.OpenInitiativeDetailsTest"/>
         </classes>
     </test>
+
 </suite>

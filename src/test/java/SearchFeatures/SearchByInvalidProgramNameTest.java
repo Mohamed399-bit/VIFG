@@ -12,6 +12,7 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.*;
 import tests.TestBase;
+import utilities.Helper;
 import utilities.SetURL;
 
 public class SearchByInvalidProgramNameTest extends TestBase {
@@ -21,7 +22,7 @@ public class SearchByInvalidProgramNameTest extends TestBase {
     SearchPage searchObject;
     VRPProgramListPage vrpProgramListObject;
 
-    @Test(priority = 10)
+    @Test(priority = 11)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By InValid Program Name")
     @Feature("Search By Program Name")
@@ -35,7 +36,9 @@ public class SearchByInvalidProgramNameTest extends TestBase {
         searchObject.clickOnVRPProgramList();
 
         vrpProgramListObject = new VRPProgramListPage(driver);
-        vrpProgramListObject.selectProgramName("ascdfsasds");
+       // vrpProgramListObject.selectProgramName("ascdfsasds");    //Test Env
+        vrpProgramListObject.selectProgramName2(Helper.generateRandomNumber2(20,22));
+        //vrpProgramListObject.selectProgramName("TEST");      // pre-prod Env
         searchObject.clickOnSearchButton();
 
         existInitiativesObject = new ExistInitiativesPage(driver);

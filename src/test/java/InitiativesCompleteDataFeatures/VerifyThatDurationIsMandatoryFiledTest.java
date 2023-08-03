@@ -84,9 +84,9 @@ public class VerifyThatDurationIsMandatoryFiledTest extends TestBase {
         savePopupObject.clickOnSaveButton();
 
         errorMessageObject = new ErrorMessagePage(driver);
-        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء إدخال جميع البيانات المطلوبة بشكل صحيح");
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
 
-        initiativeDetailsObject.VerifyFromDurationValidationMessage("برجاء إدخال المدة الزمنية بالاشهر");
+        initiativeDetailsObject.VerifyFromDurationValidationMessage("برجاء ادخال المدة الزمنية بالاشهر");
         initiativeDetailsObject.clickOnBackButton();
 
         SetURL.refreshPage();

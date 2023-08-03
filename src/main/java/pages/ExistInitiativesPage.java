@@ -84,7 +84,7 @@ public class ExistInitiativesPage extends PageBase {
 
     public void getDataForFirstInitiative() {
 
-        int randomNum = ThreadLocalRandom.current().nextInt(0, 4 + 1);
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 1 + 2);
         waitUntilLoaderDisappear();
         WebElement tableBody = getElement(table).findElement(By.tagName("tbody"));
         List<WebElement> trs = tableBody.findElements(By.tagName("tr"));

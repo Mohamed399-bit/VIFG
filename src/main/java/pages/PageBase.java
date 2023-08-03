@@ -71,21 +71,17 @@ public class PageBase {
     }
 
     protected void scrollToBottom() {
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,600)");
     }
 
     protected void scrollToUp() {
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,-650)");
     }
     protected void scrollToBottom2() {
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,250)");
     }
 
     protected void scrollToBottom3() {
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
         jse.executeScript("scrollBy(0,100)");
     }
     protected void scrollUntilElement1(By element) throws InterruptedException {

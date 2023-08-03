@@ -87,9 +87,9 @@ public class VerifyThatInitiativeAchievedSavingsIsMandatoryFiledTest extends Tes
         savePopupObject.clickOnSaveButton();
 
         errorMessageObject = new ErrorMessagePage(driver);
-        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء إدخال جميع البيانات المطلوبة بشكل صحيح");
+        errorMessageObject.VerifyThatErrorMessageDisplay("برجاء ادخال جميع البيانات المطلوبة بشكل صحيح");
 
-        initiativeDetailsObject.VerifyFromInitiativeAchievedSavingsValidationMessage("برجاء إدخال الوفر المحقق للسنة الحالية");
+        initiativeDetailsObject.VerifyFromInitiativeAchievedSavingsValidationMessage("برجاء ادخال الوفر المحقق للسنة الحالية");
         initiativeDetailsObject.clickOnBackButton();
 
         SetURL.refreshPage();

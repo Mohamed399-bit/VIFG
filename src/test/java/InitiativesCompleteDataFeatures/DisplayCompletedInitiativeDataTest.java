@@ -4,7 +4,6 @@ import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import pages.CompleteInitiativeDetailsPage;
 import pages.ExistInitiativesPage;
-import pages.InitiativeDetailsPage;
 import tests.TestBase;
 import utilities.SetURL;
 

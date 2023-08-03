@@ -42,8 +42,9 @@ public class HomePage extends PageBase{
 
     public void clickOnSearchIcon() throws InterruptedException {
         waitUntilLoaderDisappear();
-        Thread.sleep(2500);
-        clickButton(searchFiledIcon);
+        Thread.sleep(2000);
+        //clickButton(searchFiledIcon);
+        clickOnButtonUsingJavaScript(getElement(searchFiledIcon));
     }
 
     public void scrollDown(){

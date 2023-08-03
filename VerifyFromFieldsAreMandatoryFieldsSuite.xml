@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Verify From Fields Are Mandatory ">
-    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <!--parameter name="browser" value="chrome"/ -->
     <test name="Verify From Fields Are Mandatory " preserve-order="true">
         <classes>
             <class name="InitiativesCompleteDataFeatures.LoginTest"/>

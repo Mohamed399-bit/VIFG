@@ -21,8 +21,10 @@ public class test333{
     @Test()
     public void clickdsdsd() throws InterruptedException {
 
-        int randomNum = ThreadLocalRandom.current().nextInt(2019, 2020 + 1);
-        System.out.println(randomNum);
+//        int randomNum = ThreadLocalRandom.current().nextInt(2019, 2020 + 1);
+//        System.out.println(randomNum);
+
+        System.out.println(System.getProperty("user.dir")+ "\\src\\test\\java\\config\\config.properties");
 
     }
 }

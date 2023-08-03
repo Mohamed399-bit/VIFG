@@ -21,7 +21,7 @@ public class SearchByInvalidUICTest extends TestBase {
     SearchPage searchObject;
 
 
-    @Test(priority = 11)
+    @Test(priority = 10)
     @Severity(SeverityLevel.NORMAL)
     @Description("Search By Invalid UIC")
     @Feature("Search By UIC")

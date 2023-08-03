@@ -11,18 +11,11 @@ package utilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -92,71 +85,6 @@ public class Helper {
         }
         String randomString = sb.toString();
         return randomString;
-    }
-
-    //Method to get Today date
-    public static String getSystemDate() {
-        // Create object of SimpleDateFormat class and decide the format
-        DateFormat dateFormat = new SimpleDateFormat("EEE, dd/MM/yyyy");
-        //get current date time with Date()
-        Date date = new Date();
-        // Now format the date
-        String date1 = dateFormat.format(date);
-        // Print the Date
-        System.out.println(date1);
-        return date1;
-    }
-
-    public static String getTodayName() {
-        DateFormat dateFormat = new SimpleDateFormat("EEE");
-        Date date = new Date();
-        String date1 = dateFormat.format(date);
-        System.out.println(date1);
-        return date1;
-    }
-
-    //Method to get Current day
-    public static String getTodayDay() {
-        // Create object of SimpleDateFormat class and decide the format
-        DateFormat dateFormat = new SimpleDateFormat("dd");
-        //get current date time with Date()
-        Date date = new Date();
-        // Now format the date
-        String date1 = dateFormat.format(date);
-        System.out.println(date1);
-        return date1;
-    }
-
-    //Method to get Current Month
-    public static String getCurrentMonth() {
-        // Create object of SimpleDateFormat class and decide the format
-        DateFormat dateFormat = new SimpleDateFormat("MMM");
-        //get current date time with Date()
-        Date date = new Date();
-        // Now format the date
-        String date1 = dateFormat.format(date);
-        // Print the Date
-        System.out.println(date1);
-        return date1;
-    }
-
-    public static void print(String msg, Object... args) {
-        try {
-            java.io.PrintStream ps = new java.io.PrintStream(System.out, true, "UTF-8");
-            ps.println(String.format(msg, args));
-        } catch (UnsupportedEncodingException error) {
-            System.err.println(error);
-            System.exit(0);
-        }
-    }
-
-    public static String getCurrentDayName() {
-
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        String day = new SimpleDateFormat("EE", Locale.ENGLISH).format(date.getTime());
-        System.out.println(new SimpleDateFormat("EE", Locale.ENGLISH).format(date.getTime()));
-        return day;
     }
 
     public static int generateRandomNumber2(int min , int max){

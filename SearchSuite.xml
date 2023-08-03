@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Search Suite">
-    <!--parameter name="browser" value="chrome-headless"></parameter -->
+    <!--parameter name="browser" value="chrome" / -->
     <test name="Search by all fields With Valid and Invalid Data " preserve-order="true">
         <classes>
 
@@ -13,8 +13,8 @@
             <class name="SearchFeatures.SearchByInvalidDurationTest"/>
             <class name="SearchFeatures.SearchByInvalidEntityTest"/>
             <class name="SearchFeatures.SearchByInvalidInitiativeIDTest"/>
-            <class name="SearchFeatures.SearchByInvalidProgramNameTest"/>
             <class name="SearchFeatures.SearchByInvalidUICTest"/>
+            <class name="SearchFeatures.SearchByInvalidProgramNameTest"/>
 
         </classes>
     </test>

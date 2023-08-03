@@ -36,7 +36,7 @@ public class SearchByInvalidDurationTest extends TestBase {
         homeObject.scrollDown();
 
         searchObject = new SearchPage(driver);
-        searchObject.searchByDuration(Helper.generateRandomNumber(4));
+        searchObject.searchByDuration(Helper.generateRandomNumber(3));
         searchObject.clickOnSearchButton();
 
         existInitiativesObject.VerifyThatMessageWhenSearchByInvalidData("نأسف، لم يتم العثور على المبادرة نأمل المحاولة مرة اخرى");

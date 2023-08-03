@@ -9,6 +9,7 @@
 package tests;
 
 import com.google.common.collect.ImmutableMap;
+import config.PropertiesFile;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,6 +28,7 @@ import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnviro
 
 public class TestBase {
     public static WebDriver driver;
+    public static String url;
     public static String downloadPath = System.getProperty("user.dir") + "\\Downloads";
 
     public static ChromeOptions chromeOption() {
@@ -66,8 +68,11 @@ public class TestBase {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-        driver.navigate().to("http://10.14.9.35:4250/");
-        //driver.navigate().to("https://loginpp.etimad.sa/Account/Login");
+        //PropertiesFile.ReadPropertiesFile();
+        driver.navigate().to(PropertiesFile.getUrl());
+        url = PropertiesFile.getUrl();
+        //driver.navigate().to("http://10.14.9.35:4250/");   // test
+        //driver.navigate().to("https://vrpinitiativespp.etimad.sa/");  // pre-prod
 
         allureEnvironmentWriter(
                 ImmutableMap.<String, String>builder()
@@ -90,5 +95,9 @@ public class TestBase {
             System.out.println("Taking Screenshot....");
             Helper.captureScreenShot(driver, result.getName());
         }
+    }
+
+    public static WebDriver getDriver(){
+        return driver;
     }
 }
